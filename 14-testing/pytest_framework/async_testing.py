@@ -13,7 +13,7 @@ async def test_fetch_data_success():
 
 @pytest.mark.asyncio
 async def test_fetch_data_failure():
-    with pytest.raises(Exception):
+    with pytest.raises(Exception): # with
         await fetch_data()
 
 asyncio.run(test_fetch_data_success())

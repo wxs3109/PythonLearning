@@ -12,7 +12,9 @@ import time
 # - Coroutines must be run in an event loop
 async def basic_async_function():
     # Your code here
-    pass
+    print("Basic async function started")
+    await asyncio.sleep(1)
+    print("Basic async function finished")
 
 # 2. Async Sleep
 # Knowledge:
@@ -20,7 +22,9 @@ async def basic_async_function():
 # - Allows other tasks to run during the sleep
 async def async_sleep_demo():
     # Your code here
-    pass
+    print("Async sleep demo started")
+    await asyncio.sleep(1)
+    print("Async sleep demo finished")
 
 # 3. Running Multiple Coroutines
 # Knowledge:
@@ -28,7 +32,12 @@ async def async_sleep_demo():
 # - Returns results in the same order as input
 async def run_multiple_tasks():
     # Your code here
-    pass
+    print("Running multiple tasks started")
+    await asyncio.gather(
+        basic_async_function(),
+        async_sleep_demo()
+    )
+    print("Running multiple tasks finished")
 
 # 4. Async with Timeout
 # Knowledge:
@@ -36,7 +45,12 @@ async def run_multiple_tasks():
 # - Raises TimeoutError if coroutine takes too long
 async def async_with_timeout():
     # Your code here
-    pass
+    print("Async with timeout startfed")
+    try:
+        await asyncio.wait_for(basic_async_function(), timeout=0.5)
+    except asyncio.TimeoutError:
+        print("Async with timeout timed out")
+    print("Async with timeout finished")
 
 # 5. Async Context Manager
 # Knowledge:
