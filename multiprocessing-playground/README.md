@@ -127,11 +127,14 @@ multiprocessing-playground/
 # Python 3.7+
 python --version
 
-# 安装依赖
-pip install numpy psutil pytest
+# 安装基本依赖 (推荐)
+pip install -r requirements.txt
 
-# 可选依赖
-pip install dask ray
+# 或者手动安装核心依赖
+pip install numpy psutil pytest matplotlib
+
+# 可选依赖 (取消注释 requirements.txt 中的相应部分)
+# pip install dask ray
 ```
 
 ## 📖 使用方法

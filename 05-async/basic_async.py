@@ -11,7 +11,6 @@ import time
 # - await pauses execution until the awaited coroutine completes
 # - Coroutines must be run in an event loop
 async def basic_async_function():
-    # Your code here
     print("Basic async function started")
     await asyncio.sleep(1)
     print("Basic async function finished")

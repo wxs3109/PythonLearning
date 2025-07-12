@@ -7,7 +7,13 @@
 # Task: Create a function that demonstrates exception groups
 def process_data(data_list):
     # Your code here
-    pass
+    for data in data_list:
+        if data < 0:
+            raise ValueError("Data cannot be negative")
+        if data > 100:
+            raise ValueError("Data cannot be greater than 100")
+        print(data)
+    return data_list
 
 # 2. Exception Notes
 # Knowledge: Adding context to exceptions
