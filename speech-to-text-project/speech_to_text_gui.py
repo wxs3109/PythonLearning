@@ -343,8 +343,14 @@ class SpeechToTextGUI:
         
         self.update_status("⏹️ Recording stopped. Processing remaining speech...")
         
-        # Give time for transcription to finish processing remaining audio
-        self.root.after(3000, self._complete_stop_recording)
+        # Wait for the recording thread to finish processing in the background
+        def wait_and_finalize():
+            """Join the recording thread before completing stop."""
+            if self.recording_thread and self.recording_thread.is_alive():
+                self.recording_thread.join()
+            self.root.after(0, self._complete_stop_recording)
+
+        threading.Thread(target=wait_and_finalize, daemon=True).start()
     
     def _complete_stop_recording(self):
         """Complete the stop recording process after processing remaining speech."""
