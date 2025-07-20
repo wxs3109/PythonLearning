@@ -134,6 +134,14 @@ Processing speech...
 You said: This is a test of the microphone recording feature.
 Transcription saved to: transcription.txt
 ```
+### CELPIP Speaking Practice
+
+Use `celpip_practice.py` to practice the eight CELPIP speaking tasks. Select a task, enter a question, prepare for the allotted time, and the script will record and transcribe your answer. Audio and text files are saved in a directory you choose.
+
+```bash
+python celpip_practice.py -o my_recordings
+```
+
 
 ## Configuration
 
